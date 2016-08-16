@@ -1,0 +1,16 @@
+sudo: false
+language: python
+cache: pip
+python:
+  - "2.7"
+  - "pypy"
+install:
+  - pip install -r requirements.txt --use-mirrors
+  - pip install -r test_requirements.txt --use-mirrors
+script:
+  - coverage run `which nosetests` listman tests
+after_success:
+  - coveralls
+notifications:
+  email: false
+  slack: friendsofhasgeek:3bLViYSzhfaThJovFYCVD3fX
