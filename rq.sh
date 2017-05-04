@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rqworker -c rqdev listman
+rqworker -c rqinit listman
