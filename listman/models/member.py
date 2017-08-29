@@ -2,7 +2,7 @@
 
 import re
 import phonenumbers
-from coaster.utils import md5sum, LabeledEnum
+from coaster.utils import md5sum, require_one_of, LabeledEnum
 from baseframe import __
 from . import db, BaseMixin, JsonDict
 from .list import List
@@ -58,12 +58,8 @@ class Member(BaseMixin, db.Model):
 
     @classmethod
     def get(cls, list, email=None, phone=None):
-        if not list or ((not not email) + (not not phone) != 1):
-            raise TypeError("List and one of email or phone must be provided")
-        if email:
-            return cls.query.filter_by(list=list, email=email).one_or_none()
-        elif phone:
-            return cls.query.filter_by(list=list, phone=phone).one_or_none()
+        param, value = require_one_of(True, email=email, phone=phone)
+        return cls.query.filter_by(**{param: value, 'list': list}).one_or_none()
 
     @property
     def fullname(self):
