@@ -1,8 +1,8 @@
-Flask
-Flask-SQLAlchemy
-Flask-RQ
+Flask==1.0.2
+Flask-SQLAlchemy==2.3.2
+Flask-RQ==0.2
 https://github.com/hasgeek/coaster/archive/master.zip
 https://github.com/hasgeek/baseframe/archive/master.zip
 https://github.com/hasgeek/flask-lastuser/archive/master.zip
-phonenumbers
-Flask-Migrate
+phonenumbers==8.9.7
+Flask-Migrate==2.1.1
