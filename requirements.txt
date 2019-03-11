@@ -4,5 +4,5 @@ Flask-RQ==0.2
 https://github.com/hasgeek/coaster/archive/master.zip
 https://github.com/hasgeek/baseframe/archive/master.zip
 https://github.com/hasgeek/flask-lastuser/archive/master.zip
-phonenumbers==8.10.6
+phonenumbers==8.10.7
 Flask-Migrate==2.4.0
